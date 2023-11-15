@@ -20,7 +20,7 @@ public class Function
         string payload = $"{{'text':Issue Created: {json.issue.html_url}'}}";
 
         var client = new HttpClient();
-        var webRequest = new HttpRequestMessage(HttpMethod.Post, Environment.GetEnvironmentVariable("https://hooks.slack.com/services/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"))
+        var webRequest = new HttpRequestMessage(HttpMethod.Post, Environment.GetEnvironmentVariable("SLACK_URL"))
         {
             Content = new StringContent(payload, Encoding.UTF8, "application/json")
         };
